@@ -1,0 +1,3122 @@
+[
+  {
+    "episode_id": "trial_T20190907_151802_277016",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan27",
+    "instruction": "Slice an apple or vegetable followed by rinsing it",
+    "start_pose": {
+      "x": 1.0,
+      "y": 0.9010001,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_105559_983897",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan8",
+    "instruction": "wash the butter knife and put it back on the counter",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 1.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_114508_617301",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan16",
+    "instruction": "To wash an knife and place it on the kitchen table.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.900999665,
+      "z": 2.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_121728_511866",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan2",
+    "instruction": "Put a clean butter knife in a drawer.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": -0.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_052007_212776",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan30",
+    "instruction": "Place a rinsed knife inside a drawer.",
+    "start_pose": {
+      "x": 2.0,
+      "y": 0.9304675,
+      "z": 0.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_124425_112757",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan8",
+    "instruction": "Place a clean knife in a drawer.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_154521_553270",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan402",
+    "instruction": "Put a clean wash cloth in the tub.",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9006702,
+      "z": 3.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_080903_889497",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan405",
+    "instruction": "Put a wet towel in the cabinet.",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.9048511,
+      "z": 0.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_140701_251653",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan423",
+    "instruction": "Get wash rag wet and put it away in drawer.",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.9019853,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_175253_104175",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan413",
+    "instruction": "Put a clean cloth on the back of the toilet.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.900691152,
+      "z": 1.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_234735_610018",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan427",
+    "instruction": "Place a washed sponge in a tub.",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.902041554,
+      "z": 0.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_024634_972453",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan401",
+    "instruction": "Put a wet sponge on the metal rack. ",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9016162,
+      "z": 0.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_144357_621068",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan403",
+    "instruction": "Put a wet sponge on the counter.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.909382,
+      "z": 2.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_233922_171295",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan23",
+    "instruction": "Place a rinsed fork on a counter.",
+    "start_pose": {
+      "x": -4.0,
+      "y": 0.9009995,
+      "z": -2.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_132152_999725",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan8",
+    "instruction": "Wash a fork and place inside kitchen drawer.",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": -1.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_113844_191747",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan14",
+    "instruction": "Place a rinsed spoon on a counter.",
+    "start_pose": {
+      "x": 1.0,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_121908_219603",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan8",
+    "instruction": "Place a clean ladle on a counter.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_183724_205399",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan16",
+    "instruction": "Put a clean large metal spoon on the round white table.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.900999665,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190911_131350_027076",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan27",
+    "instruction": "put clean spoon on the table",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9010001,
+      "z": -0.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_164840_568811",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan4",
+    "instruction": "get ladle, wash it, return it to wooden table",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9009999,
+      "z": 1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_051630_092360",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan16",
+    "instruction": "Retrieve green vegetable from table, wash it in the sink, put it on the right side counter",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.900999665,
+      "z": -1.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_100138_446072",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "place clean lettuce inside of the kitchen fridge",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9016907,
+      "z": -2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_005709_232606",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "Put a washed piece of lettuce on the counter by the sink.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9016907,
+      "z": -2.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_010452_388275",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "Place clean lettuce in the fridge.",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9016907,
+      "z": -2.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_233056_022802",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan26",
+    "instruction": "Put a clean mug under the coffee maker.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.901591063,
+      "z": 2.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_212725_836398",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "Put a clean plate on the counter.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9016907,
+      "z": -2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_112854_740612",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan5",
+    "instruction": "Place a rinsed plate in the fridge.",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9009992,
+      "z": -1.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_191121_189259",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan413",
+    "instruction": "Wash a soap bar and put it in the tub.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.900691152,
+      "z": 3.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_064808_086925",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan423",
+    "instruction": "wash the pink bar by the sink, put the pink bar in the tub",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9019853,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_055221_984342",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan402",
+    "instruction": "Put a clean bar of soap under the sink. ",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9006702,
+      "z": 4.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_202340_749336",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan423",
+    "instruction": "Put away clean soap.",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9019853,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_201106_979461",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan410",
+    "instruction": "place clean soap on top of the toilet",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.900394559,
+      "z": 2.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_201148_878110",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan410",
+    "instruction": "Put wet soap on the toilet tank lid. ",
+    "start_pose": {
+      "x": -3.75,
+      "y": 0.900394559,
+      "z": 4.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_041436_588106",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan428",
+    "instruction": "Place the wet soap on top of the toilet next to the other soaps.",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.901492238,
+      "z": 2.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_002804_564168",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan4",
+    "instruction": "Place a spatula on the table.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9009999,
+      "z": 3.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_012550_586494",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan25",
+    "instruction": "wash a tomato and put it on the counter",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190918_161337_246067",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan20",
+    "instruction": "Place a rinsed slice of tomato in the microwave",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": 1.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_061130_844814",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a washed bowl away in a kitchen cabinet.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": 1.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_061158_110530",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a filled bowl of water in the cabinet left of the microwave.",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9009992,
+      "z": 1.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_061232_368489",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a washed bowl in a cabinet.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": -1.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_022321_380927",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan424",
+    "instruction": "Put a cleaned blue cloth in a cabinet.",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.90103066,
+      "z": 2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_022345_347148",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan424",
+    "instruction": "rinse the rag in the sink and put it in the cabinet",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.90103066,
+      "z": 2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_022436_073995",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan424",
+    "instruction": "wash the cloth from the cabinet, put it back",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.90103066,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_100512_362932",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan424",
+    "instruction": "Place a washed towel in the middle of two sinks",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.90103066,
+      "z": 2.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_100632_546757",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan424",
+    "instruction": "Put a clean wash cloth on the counter.",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.90103066,
+      "z": 2.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_114340_674467",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan424",
+    "instruction": "Place a clean rag on a counter.",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.90103066,
+      "z": 1.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_120554_888709",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a clean egg in the microwave.",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_120632_691361",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a washed egg in a microwave.",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_120712_273910",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a clean egg in the microwave.",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_110347_624008",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "put a knife in the sink before standing it on the counter",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_110445_675754",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a clean knife on a plate on the counter.",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9009992,
+      "z": -1.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_110531_148235",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Wash a knife in the sink to place on a countertop.",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": -2.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_115403_911841",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "To wash a slice of lettuce and place it in the trash can.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_115651_521111",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Dispose of a lettuce slice after slicing and rinsing it off",
+    "start_pose": {
+      "x": -3.75,
+      "y": 0.9009992,
+      "z": -1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190918_143430_997524",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place sliced lettuce into a bin.",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_221208_560499",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Fill up a mug with water and take to the coffee machine.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_221300_362511",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cleaned mug on the coffee maker to the right of the stove.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 1.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_221355_558505",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Pick up the white coffee cup, fill it in the sink, place it in the coffee maker. ",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": -1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_032434_013084",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cleaned pan on the counter. ",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_032518_891433",
+    "task_type": "clean_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a washed pan on the counter.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": -2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_044933_815840",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan14",
+    "instruction": "put a chilled apple on a kitchen counter",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_195943_081289",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan2",
+    "instruction": "Place a cool apple in the white bin.",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9009992,
+      "z": 1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_210937_878489",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "Take the apple from the table, put it in the refrigerator, take it out, heat the apple in the microwave",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.9016907,
+      "z": -2.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_150807_823817",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan5",
+    "instruction": "Put a chilled apple in the microwave. ",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_022535_813547",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan18",
+    "instruction": "Place a cold apple slice on the table.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.900999844,
+      "z": 7.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_193525_796595",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan25",
+    "instruction": "Place a chilled apple section into the bin.",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9009992,
+      "z": 1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_013001_399963",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan21",
+    "instruction": "place a sliced apple down on the black table at the end of the kitchen counter",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.869696259,
+      "z": 0.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_112912_154874",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan20",
+    "instruction": "put chilled bowl in cabinet",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_045605_307949",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan7",
+    "instruction": "Chill the bread from the counter in the fridge and put it to the left of the stove.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.9009992,
+      "z": 0.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_075813_148407",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan27",
+    "instruction": "Slice the bread, take a slice, put the slice in the fridge, put the slice on the table",
+    "start_pose": {
+      "x": 1.25,
+      "y": 0.9010001,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_102940_350963",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan11",
+    "instruction": "Put a slice of bread into a microwave",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_192817_654400",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan17",
+    "instruction": "Take the cup out of the microwave, put it in the fridge, back in the microwave.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.908999562,
+      "z": 2.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_192823_237997",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan21",
+    "instruction": "Place a chilled cup on the table.",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.869696259,
+      "z": -2.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_195826_107019",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "Place the cup from the table in the sink. ",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.9016907,
+      "z": -3.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_051942_388647",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan20",
+    "instruction": "cool the egg in the refrigerator, put the egg in the microwave",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 0.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_234112_645480",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan24",
+    "instruction": "Put a cold egg in the microwave.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": 3.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_042713_075616",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan1",
+    "instruction": "Place a chilled head of lettuce on a counter.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009995,
+      "z": -1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_222555_651605",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan11",
+    "instruction": "Place a chilled head of lettuce on a counter.",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_101835_683416",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan15",
+    "instruction": "put a chilled, cut slice of lettuce in the sink",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.914953351,
+      "z": 2.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_015957_501112",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan2",
+    "instruction": "place a cold lettuce slice in the sink",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_184242_348366",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan16",
+    "instruction": "Place a cooled mug on a coffee machine.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.900999665,
+      "z": 0.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_232648_241836",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan7",
+    "instruction": "Put a chilled pan on a kitchen table",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9009992,
+      "z": 0.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_181023_216915",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan18",
+    "instruction": "Place a chilled frying pan on the stove.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.900999844,
+      "z": 0.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_215856_374127",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan23",
+    "instruction": "Put a chilled pan on the stove. ",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9009995,
+      "z": -1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_173120_350651",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan27",
+    "instruction": "Put the plate from the table inside the refrigerator, and then store it in the cabinet under the sink.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.9010001,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_231206_512424",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan7",
+    "instruction": "Put a chilled plate in a cabinet.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_205324_559361",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan1",
+    "instruction": "cool off a white plate",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.9009995,
+      "z": 0.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_004531_429065",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan21",
+    "instruction": "Put a cold pot on a table.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.869696259,
+      "z": -2.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_041830_078220",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan18",
+    "instruction": "place a cold potato slice in the oven",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.900999844,
+      "z": 2.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_073447_193556",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan13",
+    "instruction": "Place a cold potato slice in the sink.",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.8995012,
+      "z": 3.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_063754_216554",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan12",
+    "instruction": "Put a chilled tomato on the counter.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009999,
+      "z": -0.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_063844_274181",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan12",
+    "instruction": "Put a cool tomato on the counter.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009999,
+      "z": 2.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_082934_483899",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan6",
+    "instruction": "Put a frozen tomato in to garbage bin. ",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190910_173916_331859",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan13",
+    "instruction": "Put a chilled tomato in the microwave",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.8995012,
+      "z": 0.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_012524_159092",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan18",
+    "instruction": "Put a cold tomato in the microwave.",
+    "start_pose": {
+      "x": 1.25,
+      "y": 0.900999844,
+      "z": 5.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_165525_911839",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan12",
+    "instruction": "Put a chilled slice of tomato in the microwave.",
+    "start_pose": {
+      "x": 1.0,
+      "y": 0.9009999,
+      "z": 0.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_071506_149865",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan4",
+    "instruction": "Cut a tomato slice, refrigerate it, place it on a sponge",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9009999,
+      "z": 1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_024426_412044",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan17",
+    "instruction": "Set a chilled bottle of wine on the table.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.908999562,
+      "z": 3.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_091747_866951",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Cool some bread and the place it on the counter.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_091811_414150",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put chilled bread on the counter, right of the fridge. ",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": -1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_091835_825830",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cool loaf of bread on the counter.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 1.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_224631_058932",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cold slice of bread in the microwave.",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": -2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_224718_745017",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cold slice of bread in a microwave.",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9009992,
+      "z": 0.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_224843_443882",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "placed a cooled slice of bread that you cut inside of the microwave",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9009992,
+      "z": -2.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_173120_648218",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Pick up the egg, put it in the refrigerator and then put it in the sink. ",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_173149_648833",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a chilled egg in the sink.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_173215_875825",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a chilled egg into the sink.",
+    "start_pose": {
+      "x": -3.75,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_123133_763972",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "chill the lettuce then return it to the counter",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_174807_646433",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put chilled lettuce on the counter. ",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_174840_771703",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put chilled lettuce on the counter.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": 0.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_040233_171346",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place chilled lettuce into a sink",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_040303_217739",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "To chill lettuce for cooking. ",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": 0.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_040327_147149",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a cool lettuce in the sink.",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_204424_983859",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a chilled slice of lettuce in the trash can.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_213642_049125",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cold slice of lettuce in the garbage bin. ",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_213855_654145",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a cold lettuce slice in the black trash can.",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_121559_082363",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a cold coffee up in the bottom cabinet. ",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9009992,
+      "z": 1.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_121635_622676",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a chilled mug in a cabinet.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_121710_650938",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a chilled mug in a cabinet.",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_183715_299073",
+    "task_type": "cool_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Move a chilled mug to the coffee maker. ",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.9009992,
+      "z": -1.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_060234_011675",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan26",
+    "instruction": "Put a heated apple on the table. ",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.901591063,
+      "z": 2.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_103008_353204",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan25",
+    "instruction": "put heated apple in sink",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9009992,
+      "z": 1.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_232225_725376",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan14",
+    "instruction": "Place a cooked slice of apple to the right of the yellow knife on the counter.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190918_205656_000147",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan17",
+    "instruction": "Move a heated slice of apple to the white table with shelving below.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.908999562,
+      "z": 1.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190911_045200_839773",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan18",
+    "instruction": "Cooking a sliced apple in the microwave",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.900999844,
+      "z": 2.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_234650_780308",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan26",
+    "instruction": "Place an apple slice into the refrigerator on the bottom shelf. ",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.901591063,
+      "z": 1.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_211222_551053",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan11",
+    "instruction": "Warming up an apple slice.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_001852_804129",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan30",
+    "instruction": "Put the warm slice apple in the sink",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9304675,
+      "z": -0.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_023536_977733",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan26",
+    "instruction": "place a hot bread slice on the table",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.901591063,
+      "z": 4.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_070424_700178",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan19",
+    "instruction": "Slice the bread, cook a slice in the microwave, put it in the fridge",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9016907,
+      "z": -2.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_173251_960848",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan22",
+    "instruction": "Heat a glass and place it in the cabinet.",
+    "start_pose": {
+      "x": 1.75,
+      "y": 0.9009992,
+      "z": 1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_122951_021026",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan2",
+    "instruction": "Place a heated egg on the kitchen island.",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_091314_636733",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan14",
+    "instruction": "cook an egg then put it back inside the fridge",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_062333_424779",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan26",
+    "instruction": "place microwaved black mug in upper cabinet in between microwave and sink",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.901591063,
+      "z": 1.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_014639_335717",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan3",
+    "instruction": "Move mug from coffee maker to microwave and heat, move to cabinet.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 1.12401652,
+      "z": -0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_222640_487432",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan1",
+    "instruction": "Put a heated mug on the coffee machine. ",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9009995,
+      "z": -1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_090729_088825",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan21",
+    "instruction": "Put a heated mug down on a table.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.869696259,
+      "z": -0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_070946_578973",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan1",
+    "instruction": "Put a heated white plate in a cabinet.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009995,
+      "z": -1.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_001247_096796",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan28",
+    "instruction": "Warm a plate and place it on the table.",
+    "start_pose": {
+      "x": -4.0,
+      "y": 0.900998235,
+      "z": -1.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_011341_436523",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan11",
+    "instruction": "Heat and chill a potato.",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_014451_271080",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan12",
+    "instruction": "cook the potato with microwave, put the potato in the refrigerator",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009999,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_050524_644477",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan18",
+    "instruction": "Put a warm potato in the sink.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.900999844,
+      "z": 4.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_042418_987263",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan15",
+    "instruction": "Slice a potato with a knife in order to throw it away. ",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.914953351,
+      "z": 1.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_115736_122556",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan13",
+    "instruction": "Place a cooked potato slice in the sink",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.8995012,
+      "z": 2.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_201243_698086",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan16",
+    "instruction": "Heat a tomato and place it on a table.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.900999665,
+      "z": 3.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_020200_054379",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan15",
+    "instruction": "place a microwaved tomato inside of the fridge",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.914953351,
+      "z": 1.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_082320_103350",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan23",
+    "instruction": "Place a tomato back in the refrigerator when done heating in the microwave.",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9009995,
+      "z": -0.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_033721_967359",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan24",
+    "instruction": "Put a cooked tomato into the refrigerator.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_070653_021555",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan11",
+    "instruction": "Microwave the tomato and put it in the sink",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_070740_753071",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan11",
+    "instruction": "Put a microwaved tomato in the sink.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_102658_284984",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan12",
+    "instruction": "Put a cooked slice of tomato on a kitchen counter.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009999,
+      "z": 1.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190910_180358_375701",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan2",
+    "instruction": "Put the cooked tomato slice on the kitchen island",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_004537_873323",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan16",
+    "instruction": "to cook a sliced tomato to throw it in the trash. ",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.900999665,
+      "z": -1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_044151_889150",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan15",
+    "instruction": "Put a cooked slice of tomato in a sink.",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.914953351,
+      "z": 1.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_182259_116320",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put the cooked green apple in the fridge",
+    "start_pose": {
+      "x": -3.75,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_182353_418140",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a microwaved apple in the fridge.",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_182435_622538",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a heated apple next to the lettuce on the middle shelf in the refrigerator.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": -0.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_145050_918567",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "place a microwaved apple inside the garbage bin",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_145143_820541",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a warmed up apple in the trash can.",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_145356_918528",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put in the heated apple in the trash bin",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.9009992,
+      "z": 1.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_020258_749030",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Get an apple from the sink and heat it up in the microwave",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_020329_050110",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a cooked apple into the sink.",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_020403_745438",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Use the microwave to heat an apple.",
+    "start_pose": {
+      "x": -2.75,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_131500_521936",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a microwaved chunk of apple on the counter.",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_131635_504536",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "put a cooked apple slice on to the counter",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190910_122059_929600",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "To heat a piece of apple and place it on the counter to the right of the stove.",
+    "start_pose": {
+      "x": -3.75,
+      "y": 0.9009992,
+      "z": -2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_073656_715770",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a slice of cooked apple into the trash.",
+    "start_pose": {
+      "x": -2.5,
+      "y": 0.9009992,
+      "z": 1.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_073749_086690",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a slice of green apple in the trash can near the fridge. ",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": 0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_073839_704604",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put the heated slice apple in the trash bin",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": 0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_025158_582174",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "slice and cook a piece of bread , put it on the counter top",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_025303_695053",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Slice bread, heat bread, move knife and bread to counter.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_025420_586121",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a warm slice of bread on the counter. ",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_083346_800823",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Warm up the cup inside the cabinet.",
+    "start_pose": {
+      "x": -3.75,
+      "y": 0.9009992,
+      "z": -1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_083429_887065",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a heated cup in a cabinet",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": 2.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_083507_594820",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a warm cup in the cabinet.",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9009992,
+      "z": 0.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_113432_673307",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a heated egg in a bin",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9009992,
+      "z": -1.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_113523_123938",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "place a microwaved egg inside the garbage bin",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9009992,
+      "z": -2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_113610_425142",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "To heat an egg and place it inside the black bin. ",
+    "start_pose": {
+      "x": 0.0,
+      "y": 0.9009992,
+      "z": -1.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_021100_341887",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Place a heated mug in a cabinet.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": 2.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_021200_669381",
+    "task_type": "heat_and_place",
+    "scene": "FloorPlan10",
+    "instruction": "Put a warmed mug in the cabinet.",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9009992,
+      "z": -1.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_044715_250790",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan323",
+    "instruction": "look at the clock under the lamp",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_060414_846460",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan303",
+    "instruction": "Examine the baseball bat under the light of the table lamp",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.901000142,
+      "z": -0.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_150719_492274",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan301",
+    "instruction": "take the bowl to the lamp",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": -0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_230702_962704",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan316",
+    "instruction": "Examine a bowl by the light of a desk lamp.",
+    "start_pose": {
+      "x": 1.25,
+      "y": 0.901932836,
+      "z": 0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_074425_330493",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan205",
+    "instruction": "Turn on a light with a box in hand.",
+    "start_pose": {
+      "x": -4.75,
+      "y": 0.9011251,
+      "z": 1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_154618_526741",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan302",
+    "instruction": "Grab the disc from the shelf, turn on the lamp on the cabinet",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.9009992,
+      "z": 0.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_114323_767231",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan314",
+    "instruction": "Examine a CD by a lamp",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": -0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_224451_655673",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan320",
+    "instruction": "Carry a CD while turning on a lamp",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9017602,
+      "z": 0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_170503_844252",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan303",
+    "instruction": "Pick up a towel and turn a light on.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.901000142,
+      "z": -0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_083541_210340",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan206",
+    "instruction": "Examine a credit card by the light of a floor lamp.",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9009992,
+      "z": 0.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_031918_448619",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan207",
+    "instruction": "Examine the credit card by the light of the lamp. ",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9009992,
+      "z": 2.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_173545_981227",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan227",
+    "instruction": "Examine the credit card by the light of the floor lamp",
+    "start_pose": {
+      "x": -4.75,
+      "y": 0.9270526,
+      "z": 1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_173610_612042",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan227",
+    "instruction": "examine the credit card under a lamp",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9270526,
+      "z": 1.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_202601_548273",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan327",
+    "instruction": "Examine the keys under the light of the table lamp",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_030908_402835",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan204",
+    "instruction": "pick up keys, turn on lamp",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.9023143,
+      "z": 1.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_203806_730562",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan213",
+    "instruction": "grab the key chain from the sofa, turn on the floor lamp",
+    "start_pose": {
+      "x": 9.0,
+      "y": 0.9028512,
+      "z": -0.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_201550_622420",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan328",
+    "instruction": "Pick up a laptop and turn on a lamp",
+    "start_pose": {
+      "x": 1.25,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_130001_953970",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan205",
+    "instruction": "Grab the computer from the arm chair, turn off the floor lamp",
+    "start_pose": {
+      "x": -3.5,
+      "y": 0.9011251,
+      "z": 2.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_150916_682139",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan302",
+    "instruction": "Carry a purple pillow while turning on a lamp",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9009992,
+      "z": 0.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_053153_077977",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan323",
+    "instruction": "Look at a pillow by the light of a lamp.",
+    "start_pose": {
+      "x": 1.0,
+      "y": 0.9009992,
+      "z": 0.5,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_201007_149137",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan223",
+    "instruction": "hold a pillow while turning on a lamp",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.9009992,
+      "z": -0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_232929_254246",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan202",
+    "instruction": "Examine a remote control by the light of a floor lamp.",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9010459,
+      "z": 3.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_070857_687585",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan213",
+    "instruction": "Turn on a lamp while carrying a remote",
+    "start_pose": {
+      "x": 12.5,
+      "y": 0.9028512,
+      "z": -0.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_164342_432289",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan218",
+    "instruction": "Turn a lamp on with a remote in hand.",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.9008399,
+      "z": 4.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_193045_208933",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan216",
+    "instruction": "Examine a statue by the light of a small lamp.",
+    "start_pose": {
+      "x": -3.0,
+      "y": 0.9009992,
+      "z": -3.0,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_065522_867032",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan324",
+    "instruction": "Turn the green lamp on while carrying a tennis racquet.",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.9020053,
+      "z": -1.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_150418_457594",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan303",
+    "instruction": "Turn on the desk lamp while holding a yellow disc",
+    "start_pose": {
+      "x": 0.5,
+      "y": 0.901000142,
+      "z": -0.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_133349_808774",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan204",
+    "instruction": "Look at an object by the light of a lamp.",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9023143,
+      "z": -3.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_034437_413802",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan212",
+    "instruction": "Turn on the lamp while holding the teapot.",
+    "start_pose": {
+      "x": 0.25,
+      "y": 0.9009992,
+      "z": 0.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_050633_745514",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan329",
+    "instruction": "move a magazine from the bed to the table",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_042856_259139",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan229",
+    "instruction": "Move a book from a desk to a sofa.",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.922051549,
+      "z": 3.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_171639_045329",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan201",
+    "instruction": "Move a bowl from a dining table to a coffee table.",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9026567,
+      "z": 5.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_164104_229696",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan224",
+    "instruction": "move a box from the couch to the dresser",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.916797757,
+      "z": -0.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_081908_677973",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan401",
+    "instruction": "Put a candle on a rack.",
+    "start_pose": {
+      "x": -2.0,
+      "y": 0.9016162,
+      "z": 2.25,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_055248_059513",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan407",
+    "instruction": "Put a candle on the back of a toilet.",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.9004556,
+      "z": 0.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_052232_887934",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan429",
+    "instruction": "Put a bottle on the back of a newspaper.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.900419354,
+      "z": -0.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_120047_968274",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan318",
+    "instruction": "Place a cell phone on a chair.",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9017602,
+      "z": -0.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_233817_198528",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan324",
+    "instruction": "Take the blue cell phone from the dresser, put it on the bed",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.9020053,
+      "z": 0.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_162502_940304",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan405",
+    "instruction": "move the red cloth from the cabinet to the tub",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9048511,
+      "z": 0.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_124340_258012",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan201",
+    "instruction": "Place a credit card on a chair.",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9026567,
+      "z": 5.5,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_010644_297017",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan227",
+    "instruction": "Put the credit card in the drawer.",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9270526,
+      "z": 1.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_234406_356490",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan4",
+    "instruction": "Put an egg in the microwave. ",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9009999,
+      "z": 2.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_053502_505422",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan408",
+    "instruction": "Put a towel in a tub.",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.9020473,
+      "z": -0.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_023400_293044",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan419",
+    "instruction": "Place a towel in the bath tub.",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.9025556,
+      "z": -0.75,
+      "rotation": 0,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_061934_041977",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan422",
+    "instruction": "Place a towel inside a sink",
+    "start_pose": {
+      "x": -0.75,
+      "y": 0.900835156,
+      "z": 1.0,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190918_184236_557252",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan3",
+    "instruction": "place a knife on the microwave oven table",
+    "start_pose": {
+      "x": 0.5,
+      "y": 1.12401652,
+      "z": -0.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_223227_631229",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan20",
+    "instruction": "Move a knife to the kitchen sink. ",
+    "start_pose": {
+      "x": -0.25,
+      "y": 0.9009992,
+      "z": -0.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_152837_739016",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan311",
+    "instruction": "Put the mug on the dresser with the television.",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9101201,
+      "z": 4.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_032318_169393",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan329",
+    "instruction": "Move a mug to a nightstand.",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9009992,
+      "z": -1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_032340_274147",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan329",
+    "instruction": "Place a CD on a table.",
+    "start_pose": {
+      "x": 1.5,
+      "y": 0.9009992,
+      "z": -0.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_111324_949106",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan224",
+    "instruction": "Place a newspaper on a couch.",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.916797757,
+      "z": 1.75,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_113054_894334",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan310",
+    "instruction": "Place a pencil on a desk.",
+    "start_pose": {
+      "x": -0.5,
+      "y": 0.9009992,
+      "z": -0.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_071128_012892",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan330",
+    "instruction": "to grab a pencil from the night stand and place it on the dresser",
+    "start_pose": {
+      "x": -1.25,
+      "y": 0.9009992,
+      "z": -2.5,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190906_200341_074379",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan406",
+    "instruction": "put the plunger inside the cupboard",
+    "start_pose": {
+      "x": -1.5,
+      "y": 0.9034263,
+      "z": 1.5,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_031040_889814",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan414",
+    "instruction": "Move a plunger to the cabinet.",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.902752042,
+      "z": 1.0,
+      "rotation": 90,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_021000_274398",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan230",
+    "instruction": "Place a remote control on a chair.",
+    "start_pose": {
+      "x": -3.25,
+      "y": 0.9082557,
+      "z": 5.25,
+      "rotation": 270,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_153609_373481",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan207",
+    "instruction": "move the remote from the table to the couch",
+    "start_pose": {
+      "x": 0.75,
+      "y": 0.9009992,
+      "z": 0.0,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190907_054906_608944",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan401",
+    "instruction": "To place the soap on the rack.",
+    "start_pose": {
+      "x": -2.25,
+      "y": 0.9016162,
+      "z": 1.75,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190909_100455_031300",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan409",
+    "instruction": "Put a bar of soap in the drawer.",
+    "start_pose": {
+      "x": -1.0,
+      "y": 0.9011651,
+      "z": 3.25,
+      "rotation": 180,
+      "horizon": 30
+    }
+  },
+  {
+    "episode_id": "trial_T20190908_110131_524518",
+    "task_type": "pick_and_place",
+    "scene": "FloorPlan414",
+    "instruction": "Move a bottle from the counter to the drawer.",
+    "start_pose": {
+      "x": -1.75,
+      "y": 0.902752042,
+      "z": 1.75,
+      "rotation": 90,
+      "horizon": 30
+    }
+  }
+]

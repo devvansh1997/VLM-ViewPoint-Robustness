@@ -20,7 +20,7 @@ import sys
 import time
 from pathlib import Path
 
-ALFRED_JSON_URL = "http://data.csail.mit.edu/janner/alfred/data/json_2.1.0.7z"
+ALFRED_JSON_URL = "https://ai2-vision-alfred.s3-us-west-2.amazonaws.com/json_2.1.0.7z"
 ARCHIVE_NAME    = "json_2.1.0.7z"
 
 # Only extract these splits — skip train/ to save ~4GB

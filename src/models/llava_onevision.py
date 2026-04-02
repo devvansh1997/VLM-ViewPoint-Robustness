@@ -4,7 +4,10 @@ LLaVA-OneVision wrapper.
 Local (small):  lmms-lab/llava-onevision-qwen2-0.5b-ov
 HPC (full):     lmms-lab/llava-onevision-qwen2-7b-ov
 
-LLaVA-OneVision is the widely used embodied AI baseline in this study.
+The 0.5B checkpoint uses the older "llava" architecture (LlavaForConditionalGeneration)
+while the 7B checkpoint uses the newer "llava_onevision" architecture
+(LlavaOnevisionForConditionalGeneration).  We detect which to use at load time
+by reading the model's config.json from the Hub.
 """
 
 import torch
@@ -23,11 +26,27 @@ class LLaVAOneVision(BaseVLM):
         self.model = None
         self.processor = None
 
+    def _is_old_arch(self) -> bool:
+        """Check if model uses the old 'llava' architecture vs 'llava_onevision'."""
+        from transformers import AutoConfig
+        config = AutoConfig.from_pretrained(self.model_id, trust_remote_code=True)
+        model_type = getattr(config, "model_type", "")
+        return model_type != "llava_onevision"
+
     def load(self) -> None:
-        from transformers import LlavaOnevisionForConditionalGeneration, AutoProcessor
+        from transformers import AutoProcessor
+
+        old_arch = self._is_old_arch()
+
+        if old_arch:
+            from transformers import LlavaForConditionalGeneration as ModelClass
+            print(f"[LLaVAOneVision] Detected old 'llava' arch for {self.model_id}")
+        else:
+            from transformers import LlavaOnevisionForConditionalGeneration as ModelClass
+            print(f"[LLaVAOneVision] Detected 'llava_onevision' arch for {self.model_id}")
 
         print(f"[LLaVAOneVision] Loading {self.model_id} ...")
-        self.model = LlavaOnevisionForConditionalGeneration.from_pretrained(
+        self.model = ModelClass.from_pretrained(
             self.model_id,
             torch_dtype=torch.float16,
             device_map="auto",
@@ -37,22 +56,8 @@ class LLaVAOneVision(BaseVLM):
         print(f"[LLaVAOneVision] Loaded.")
 
     def predict(self, image: Image.Image, prompt: str) -> str:
-        conversation = [
-            {
-                "role": "user",
-                "content": [
-                    {"type": "image"},
-                    {"type": "text", "text": prompt},
-                ],
-            }
-        ]
-
-        text = self.processor.apply_chat_template(
-            conversation, add_generation_prompt=True
-        )
-
         inputs = self.processor(
-            text=text,
+            text=prompt,
             images=image,
             return_tensors="pt",
         ).to(self.model.device)
