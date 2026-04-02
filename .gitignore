@@ -1,0 +1,54 @@
+# ---- Data (large files, not tracked in git) ----
+data/rendered_frames/
+data/logs/raw/
+data/logs/aggregated/
+
+# Keep the directory structure but not the data
+# selected_episodes.json IS tracked once locked (it's the source of truth)
+# candidate_episodes.json is also tracked
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ---- Environments ----
+.env
+.venv
+venv/
+*.conda
+
+# ---- Models / Weights (HuggingFace cache) ----
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*.ipynb
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Results (generated, not source) ----
+# Keep results/ tracked so paper figures are in the repo
+# Uncomment below if you want to exclude them:
+# results/
+
+# ---- ALFRED clone (installed separately via 00_install.sh) ----
+alfred/
