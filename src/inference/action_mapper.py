@@ -44,16 +44,16 @@ def map_response(response: str) -> tuple[str | None, str]:
     if not response:
         return None, ""
 
-    # Look for a standalone letter A-H (optionally followed by ) or .)
-    match = re.search(r'\b([A-Ha-h])\b', response)
+    # Look for a standalone single letter A-H (not part of a word)
+    match = re.search(r'(?<![A-Za-z])([A-Ha-h])(?![A-Za-z])', response)
     if match:
         letter = match.group(1).upper()
         return ACTION_MAP.get(letter), letter
 
-    # Fallback: first character if it's a valid letter
-    first = response.strip()[0].upper()
-    if first in VALID_LETTERS:
-        return ACTION_MAP[first], first
+    # Fallback: only if the entire response is a single character
+    stripped = response.strip()
+    if len(stripped) == 1 and stripped.upper() in VALID_LETTERS:
+        return ACTION_MAP[stripped.upper()], stripped.upper()
 
     return None, ""
 

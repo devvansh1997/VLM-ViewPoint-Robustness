@@ -40,6 +40,9 @@ pip install requests py7zr
 echo [setup] Installing qwen-vl-utils (for Qwen2.5-VL)...
 pip install qwen-vl-utils
 
+echo [setup] Installing einops and timm (for InternVL3)...
+pip install einops timm
+
 echo.
 echo ========================================
 echo  Sanity Checks

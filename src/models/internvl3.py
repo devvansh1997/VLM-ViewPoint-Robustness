@@ -1,10 +1,11 @@
 """
 InternVL3 wrapper.
 
-Local (small):  OpenGVLab/InternVL3-2B
-HPC (full):     OpenGVLab/InternVL3-8B
+Local (small):  OpenGVLab/InternVL3-2B-hf
+HPC (full):     OpenGVLab/InternVL3-8B-hf
 
-Uses trust_remote_code=True (InternVL ships custom modeling code).
+We use the "-hf" Hub checkpoints which are properly converted to the
+transformers-native InternVLForConditionalGeneration format.
 """
 
 import torch
@@ -12,12 +13,8 @@ from PIL import Image
 
 from src.models.base_vlm import BaseVLM
 
-LOCAL_MODEL_ID = "OpenGVLab/InternVL3-2B"
-FULL_MODEL_ID  = "OpenGVLab/InternVL3-8B"
-
-# InternVL image normalization constants
-IMAGENET_MEAN = (0.485, 0.456, 0.406)
-IMAGENET_STD  = (0.229, 0.224, 0.225)
+LOCAL_MODEL_ID = "OpenGVLab/InternVL3-2B-hf"
+FULL_MODEL_ID  = "OpenGVLab/InternVL3-8B-hf"
 
 
 class InternVL3(BaseVLM):
@@ -25,57 +22,50 @@ class InternVL3(BaseVLM):
     def __init__(self, model_id: str = LOCAL_MODEL_ID):
         self.model_id = model_id
         self.model = None
-        self.tokenizer = None
+        self.processor = None
 
     def load(self) -> None:
-        from transformers import AutoModel, AutoTokenizer
+        from transformers import InternVLForConditionalGeneration, AutoProcessor
 
         print(f"[InternVL3] Loading {self.model_id} ...")
-        self.model = AutoModel.from_pretrained(
+        self.model = InternVLForConditionalGeneration.from_pretrained(
             self.model_id,
             torch_dtype=torch.float16,
             device_map="auto",
-            trust_remote_code=True,
         )
-        self.tokenizer = AutoTokenizer.from_pretrained(
-            self.model_id,
-            trust_remote_code=True,
-        )
+        self.processor = AutoProcessor.from_pretrained(self.model_id)
         self.model.eval()
         print(f"[InternVL3] Loaded.")
 
     def predict(self, image: Image.Image, prompt: str) -> str:
-        import torchvision.transforms as T
-        from torchvision.transforms.functional import InterpolationMode
-
-        pixel_values = self._preprocess_image(image)
-        pixel_values = pixel_values.to(dtype=torch.float16, device=self.model.device)
-
-        # InternVL3 uses a <image> token in the prompt
-        full_prompt = f"<image>\n{prompt}"
-
-        generation_config = dict(
-            max_new_tokens=8,
-            do_sample=False,
+        conversation = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image"},
+                    {"type": "text", "text": prompt},
+                ],
+            },
+        ]
+        text = self.processor.apply_chat_template(
+            conversation, tokenize=False, add_generation_prompt=True
         )
+        inputs = self.processor(
+            text=text,
+            images=image,
+            return_tensors="pt",
+        ).to(self.model.device)
 
-        response = self.model.chat(
-            self.tokenizer,
-            pixel_values,
-            full_prompt,
-            generation_config,
-        )
+        with torch.no_grad():
+            output_ids = self.model.generate(
+                **inputs,
+                max_new_tokens=8,
+                do_sample=False,
+            )
 
-        return response.strip()
+        generated = output_ids[:, inputs["input_ids"].shape[1]:]
+        response = self.processor.batch_decode(
+            generated, skip_special_tokens=True
+        )[0].strip()
 
-    def _preprocess_image(self, image: Image.Image):
-        import torchvision.transforms as T
-        from torchvision.transforms.functional import InterpolationMode
-
-        transform = T.Compose([
-            T.Resize((448, 448), interpolation=InterpolationMode.BICUBIC),
-            T.ToTensor(),
-            T.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
-        ])
-        img = image.convert("RGB")
-        return transform(img).unsqueeze(0)
+        return response
