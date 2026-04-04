@@ -1,16 +1,20 @@
 # Core simulator
 ai2thor==5.0.0
 
-# ALFRED is cloned and installed separately (see scripts/00_install.sh)
-
 # VLM inference
 torch>=2.1.0
 torchvision>=0.16.0
-transformers>=4.45.0
+transformers>=5.0.0
 accelerate>=0.25.0
 bitsandbytes>=0.41.0
 sentencepiece>=0.1.99
 Pillow>=10.0.0
+
+# Flash Attention (A100 optimized)
+# Install separately via precompiled wheel — does NOT pip install cleanly.
+# Requires: Python 3.12, CUDA 12.6, torch 2.9.1
+# Wheel: flash_attn-2.8.3+cu12torch2.9cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+# flash-attn>=2.5.0
 
 # Qwen2.5-VL specific
 qwen-vl-utils>=0.0.8
@@ -29,3 +33,7 @@ scipy>=1.11.0
 # Utilities
 tqdm>=4.65.0
 jsonlines>=4.0.0
+
+# Data download
+requests>=2.28.0
+py7zr>=0.20.0

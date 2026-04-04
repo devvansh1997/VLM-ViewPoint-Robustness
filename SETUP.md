@@ -4,7 +4,7 @@
 
 - **Miniconda or Anaconda** installed
 - **Git** installed
-- **Python 3.10** (installed automatically via conda)
+- **Python 3.12** (HPC) or **3.10** (local Windows/Mac) — installed automatically via conda
 
 ## Platform Support
 
