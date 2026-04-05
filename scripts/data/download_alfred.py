@@ -119,7 +119,7 @@ def main():
     parser = argparse.ArgumentParser(description="Download ALFRED validation JSON data.")
     parser.add_argument(
         "--output_dir",
-        default=str(Path(__file__).resolve().parents[2] / "datasets"),
+        default=str(Path(__file__).resolve().parents[3] / "datasets"),
         help="Directory to place the extracted data (default: ../datasets relative to repo)",
     )
     parser.add_argument(

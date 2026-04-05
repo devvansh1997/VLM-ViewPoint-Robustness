@@ -19,7 +19,7 @@ from collections import defaultdict
 from pathlib import Path
 
 # Allow imports from src/
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from src.simulator.alfred_loader import (
     load_all_episodes,
@@ -63,7 +63,7 @@ def cap_per_task_type(episodes: list[dict], max_per_type: int) -> list[dict]:
             seen   = [e for e in eps if "seen"   in e.get("episode_id", "").lower() or True]
             # Simple even slice since we don't track split in episode dict
             capped = eps[:max_per_type]
-            print(f"[build]  {task_type}: capped {len(eps)} → {max_per_type}")
+            print(f"[build]  {task_type}: capped {len(eps)} -> {max_per_type}")
         else:
             capped = eps
             print(f"[build]  {task_type}: {len(eps)} episodes (under cap)")
@@ -106,7 +106,7 @@ def main():
         "--max_per_type",
         type=int,
         default=60,
-        help="Max episodes per task type (default: 60 → ~300 total before filtering)",
+        help="Max episodes per task type (default: 60 -> ~300 total before filtering)",
     )
     parser.add_argument(
         "--no_cap",

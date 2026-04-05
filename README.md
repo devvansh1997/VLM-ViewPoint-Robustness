@@ -17,16 +17,30 @@ This project evaluates four open-source VLMs under systematic camera rotation pe
 
 **Models evaluated (zero-shot):**
 
-| Model | Size | Notes |
-|-------|------|-------|
-| Qwen2.5-VL | 7B (full) / 3B (local) | Strong general VLM baseline |
-| InternVL3 | 8B (full) / 2B (local) | Competitive open-source |
-| Gemma 3 | 12B (full) / 4B (local) | Google 2025 SOTA, SigLIP2 vision encoder |
-| LLaVA-OneVision | 7B (full) / 0.5B (local) | Widely used embodied AI baseline |
+| Model | Full (HPC) | Local (testing) |
+|-------|-----------|-----------------|
+| Qwen2.5-VL | 7B | 3B |
+| InternVL3 | 8B | 2B |
+| Gemma 3 | 12B | 4B |
+| LLaVA-OneVision | 7B | 0.5B |
 
-**Rotation offsets evaluated:**
-- Yaw (horizontal): −45°, −30°, −15°, 0° (original), +15°, +30°, +45°
-- Pitch (vertical): −20°, −10°, 0° (original), +10°, +20°
+**Rotation offsets:**
+- Yaw (horizontal): -45, -30, -15, 0 (original), +15, +30, +45
+- Pitch (vertical): -20, -10, 0 (original), +10, +20
+- Total: 35 viewpoints per episode
+
+---
+
+## Platform Roles
+
+| Platform | Role | What Runs Here |
+|----------|------|----------------|
+| **Mac (M1 Air)** | Frame rendering | AI2-THOR simulator, frame capture |
+| **HPC (A100 Linux)** | VLM inference + analysis | All 4 models, stats, figures |
+| Windows (NVIDIA GPU) | Local model testing | VLM sanity checks only |
+
+> AI2-THOR has no Windows build and HPC lacks Xvfb/Vulkan for headless rendering.
+> Frames are rendered on Mac, zipped, transferred to HPC for inference.
 
 ---
 
@@ -36,86 +50,127 @@ This project evaluates four open-source VLMs under systematic camera rotation pe
 VLM-ViewPoint-Robustness/
 ├── env/
 │   └── requirements.txt
-├── data/
-│   ├── alfred_episodes/         # ALFRED validation JSON metadata
-│   │   ├── candidate_episodes.json
-│   │   └── selected_episodes.json   ← single source of truth for all phases
-│   ├── rendered_frames/         # ep_{id}_yaw_{deg}_pitch_{deg}.png
-│   └── logs/
-│       ├── raw/                 # one JSONL file per model per run
-│       └── aggregated/          # all_results.csv
+│
+├── scripts/
+│   ├── setup/                          # One-time environment setup
+│   │   ├── setup_env_mac.sh
+│   │   ├── setup_env_hpc.sh            # Python 3.12, torch 2.9.1, CUDA 12.6
+│   │   └── setup_env_windows.bat
+│   ├── data/                           # Data preparation
+│   │   ├── download_alfred.py          # Download ALFRED JSON metadata
+│   │   ├── build_candidate_list.py     # Build 240-episode candidate list
+│   │   └── test_render_one.py          # Smoke test AI2-THOR rendering
+│   ├── mac/                            # Frame rendering (Mac only)
+│   │   ├── render_all_frames.sh        # Render all 8,400 frames
+│   │   ├── package_frames.sh           # Zip for transfer to HPC
+│   │   └── test_render_one.sh
+│   └── hpc/                            # Inference + analysis (HPC only)
+│       ├── 01_run_baseline.sh          # Phase 1: original pose
+│       ├── 02_run_perturbation.sh      # Phase 2: all yaw/pitch combos
+│       ├── 03_run_ablation.sh          # Phase 4: prompt augmentation
+│       └── 04_generate_plots.sh        # Phase 5: figures + stats
+│
 ├── src/
-│   ├── simulator/
-│   │   ├── alfred_loader.py     # load ALFRED episode metadata
-│   │   ├── renderer.py          # AI2-THOR rotation + frame saving
-│   │   └── success_checker.py   # execute action + check success
 │   ├── models/
-│   │   ├── base_vlm.py          # abstract base class
+│   │   ├── base_vlm.py                # Abstract base: load() + predict()
 │   │   ├── qwen25vl.py
 │   │   ├── internvl3.py
-│   │   ├── spatial_mllm.py
+│   │   ├── gemma3.py
 │   │   ├── llava_onevision.py
-│   │   └── registry.py          # load_model("name", use_full=False)
+│   │   └── registry.py                # load_model("name", use_full=False)
+│   ├── simulator/
+│   │   ├── alfred_loader.py            # Load ALFRED episode metadata
+│   │   ├── renderer.py                 # AI2-THOR rotation + frame capture
+│   │   └── success_checker.py          # Execute action + check success
 │   ├── inference/
-│   │   ├── prompt_builder.py    # single template, ablation-ready
-│   │   ├── action_mapper.py     # VLM text → AI2-THOR action
-│   │   └── run_inference.py     # main inference loop (CLI)
+│   │   ├── prompt_builder.py           # Multiple-choice template, ablation-ready
+│   │   ├── action_mapper.py            # VLM text -> AI2-THOR action
+│   │   └── run_inference.py            # Main CLI inference loop
 │   └── analysis/
-│       ├── aggregate_logs.py    # merge JSONL → all_results.csv
-│       ├── filter_episodes.py   # Phase 1 episode selection
-│       ├── symmetry.py          # Phase 3 symmetry analysis
-│       ├── ablation.py          # Phase 4 ablation analysis
-│       └── plots.py             # all paper figures
-├── scripts/
-│   ├── 00_install.sh
-│   ├── 01_render_all_frames.sh
-│   ├── 02_run_baseline.sh
-│   ├── 03_run_perturbation.sh
-│   ├── 04_run_ablation.sh
-│   └── 05_generate_plots.sh
-└── results/                     # final figures and tables
+│       ├── aggregate_logs.py           # Merge JSONL -> all_results.csv
+│       ├── filter_episodes.py          # Phase 1 episode selection
+│       ├── symmetry.py                 # Phase 3: Wilcoxon +theta vs -theta
+│       ├── ablation.py                 # Phase 4: recovery delta analysis
+│       └── plots.py                    # All 5 paper figures
+│
+├── data/
+│   ├── alfred_episodes/                # candidate_episodes.json, selected_episodes.json
+│   ├── rendered_frames/                # 8,400 PNGs (rendered on Mac)
+│   └── logs/
+│       ├── raw/                        # Per-model JSONL logs
+│       └── aggregated/                 # all_results.csv
+│
+└── results/                            # Final figures + analysis CSVs
 ```
 
 ---
 
-## Reproducing Results
+## Experiment Pipeline
 
-### Phase 0 — Setup
+### Phase 0: Setup
 
+**Mac:**
 ```bash
-bash scripts/00_install.sh
+bash scripts/setup/setup_env_mac.sh && conda activate viewpoint
 ```
 
-Verify all three sanity checks pass before proceeding:
-1. AI2-THOR launches headlessly and returns a frame
-2. ALFRED episode JSON loads correctly
-3. Smallest VLM (LLaVA-OneVision 0.5B) loads and returns a response
-
-### Phase 1 — Baseline (Original Pose)
-
+**HPC:**
 ```bash
-bash scripts/02_run_baseline.sh
-python src/analysis/filter_episodes.py   # locks selected_episodes.json
+bash scripts/setup/setup_env_hpc.sh    # add --flash-attn /path/to/wheel
+conda activate viewpoint
+huggingface-cli login                   # for Gemma 3 gated access
 ```
 
-### Phase 2 — Core Perturbation Study
-
+**Data (on either machine):**
 ```bash
-bash scripts/01_render_all_frames.sh     # pre-render 8,750 frames
-bash scripts/03_run_perturbation.sh      # run all 4 models
-python src/analysis/aggregate_logs.py   # merge to all_results.csv
+python scripts/data/download_alfred.py
+python scripts/data/build_candidate_list.py --alfred_data ../datasets/json_2.1.0
 ```
 
-### Phase 3 & 4 — Analysis & Ablation
+### Phase 1A: Render Frames (Mac)
 
 ```bash
-bash scripts/04_run_ablation.sh <best_model> <worst_model>
-bash scripts/05_generate_plots.sh
+bash scripts/mac/render_all_frames.sh       # ~5-7 hours on M1 Air
+bash scripts/mac/package_frames.sh          # creates data/rendered_frames.zip
+scp data/rendered_frames.zip user@hpc:~/Independent-Study/VLM-ViewPoint-Robustness/data/
+```
+
+### Phase 1B: Baseline Inference (HPC)
+
+```bash
+# On HPC: unzip frames first
+cd data && unzip rendered_frames.zip && cd ..
+
+bash scripts/hpc/01_run_baseline.sh
+python src/analysis/filter_episodes.py \
+    --logs_dir data/logs/raw \
+    --episodes data/alfred_episodes/candidate_episodes.json \
+    --output   data/alfred_episodes/selected_episodes.json
+```
+
+### Phase 2: Core Perturbation (HPC)
+
+```bash
+bash scripts/hpc/02_run_perturbation.sh
+python src/analysis/aggregate_logs.py
+```
+
+### Phase 3 + 4: Ablation (HPC)
+
+```bash
+bash scripts/hpc/03_run_ablation.sh <best_model> <worst_model>
+python src/analysis/aggregate_logs.py
+```
+
+### Phase 5: Analysis + Figures (HPC)
+
+```bash
+bash scripts/hpc/04_generate_plots.sh
 ```
 
 ---
 
-## Running a Single Model (Custom)
+## Running a Single Model
 
 ```bash
 python src/inference/run_inference.py \
@@ -123,24 +178,9 @@ python src/inference/run_inference.py \
     --phase        core \
     --episodes     data/alfred_episodes/selected_episodes.json \
     --frames_dir   data/rendered_frames/ \
-    --output_dir   data/logs/raw/
-    # --use_full_model   (add on HPC)
-    # --headless         (add on Linux)
+    --output_dir   data/logs/raw/ \
+    --use_full_model
 ```
-
----
-
-## Local vs. HPC
-
-| Task | Local | HPC (A100 80GB) |
-|------|-------|-----------------|
-| Setup, sanity checks | ✓ | — |
-| Rendering frames | ✓ (slow) | ✓ (preferred) |
-| VLM inference | Small variants only | Full variants |
-| Analysis + plots | ✓ | ✓ |
-
-Local uses small model variants (3B/2B/0.5B). HPC uses full variants (7B/8B).
-The pipeline is identical — only `--use_full_model` changes.
 
 ---
 
@@ -166,3 +206,15 @@ Every inference call writes one JSON line:
   "image_path":            "data/rendered_frames/ep_00001_yaw_30_pitch_0.png"
 }
 ```
+
+---
+
+## Troubleshooting
+
+| Error | Fix |
+|-------|-----|
+| `conda activate` fails | `conda init bash` (Mac/Linux) or `conda init powershell` (Windows), restart terminal |
+| AI2-THOR `no build exists for arch=Windows` | Expected — render frames on Mac |
+| AI2-THOR `vulkaninfo failed` on HPC | Expected — render frames on Mac, transfer to HPC |
+| Gemma 3 `401 Unauthorized` | `huggingface-cli login` + accept license at huggingface.co |
+| `No module named einops/timm` | `pip install einops timm` |
