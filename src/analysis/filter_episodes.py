@@ -1,8 +1,10 @@
 """
 Filter episode candidates after Phase 1 baseline run and lock the episode list.
 
-Filters out episodes where no model exceeds 30% action success at original pose.
-Below this threshold, rotation signal is uninterpretable (floor effect).
+Two-pass pipeline: at this stage action_success is null (validated later on Mac).
+Instead, filter on whether models produced a valid mapped action at original pose.
+Episodes where fewer than --threshold fraction of models return a valid action
+are dropped (the VLMs can't interpret the scene at all).
 
 The output selected_episodes.json becomes the single source of truth for
 all subsequent phases. Do not change it after this step.
@@ -12,7 +14,7 @@ Usage:
         --logs_dir  data/logs/raw \
         --episodes  data/alfred_episodes/candidate_episodes.json \
         --output    data/alfred_episodes/selected_episodes.json \
-        --threshold 0.30
+        --threshold 0.50
 """
 
 import argparse
@@ -23,7 +25,6 @@ from pathlib import Path
 
 
 def load_baseline_logs(logs_dir: str) -> pd.DataFrame:
-    import jsonlines
     records = []
     for fname in os.listdir(logs_dir):
         if "baseline" in fname and fname.endswith(".jsonl"):
@@ -35,27 +36,25 @@ def load_baseline_logs(logs_dir: str) -> pd.DataFrame:
     return pd.DataFrame(records)
 
 
-def filter_episodes(logs_dir: str, episodes_path: str, output_path: str, threshold: float = 0.30):
+def filter_episodes(logs_dir: str, episodes_path: str, output_path: str, threshold: float = 0.50):
     df = load_baseline_logs(logs_dir)
 
     if df.empty:
-        print("[filter] No baseline logs found. Run 02_run_baseline.sh first.")
+        print("[filter] No baseline logs found. Run 01_run_baseline.sh first.")
         return
 
-    # For each episode, compute max success rate across all models
-    episode_max = (
-        df.groupby(["episode_id", "model"])["action_success"]
+    # For each episode, compute fraction of models that returned a valid action
+    df["has_valid_action"] = df["mapped_action"].notna()
+    episode_valid_rate = (
+        df.groupby("episode_id")["has_valid_action"]
         .mean()
-        .reset_index()
-        .groupby("episode_id")["action_success"]
-        .max()
     )
 
-    valid_ids = set(episode_max[episode_max > threshold].index.tolist())
+    valid_ids = set(episode_valid_rate[episode_valid_rate >= threshold].index.tolist())
 
-    print(f"[filter] Total candidates: {len(episode_max)}")
-    print(f"[filter] Passing threshold ({threshold:.0%}): {len(valid_ids)}")
-    print(f"[filter] Dropped (floor effect): {len(episode_max) - len(valid_ids)}")
+    print(f"[filter] Total candidates: {len(episode_valid_rate)}")
+    print(f"[filter] Passing threshold ({threshold:.0%} models produced valid action): {len(valid_ids)}")
+    print(f"[filter] Dropped (unparseable): {len(episode_valid_rate) - len(valid_ids)}")
 
     # Per task type breakdown
     df_valid = df[df["episode_id"].isin(valid_ids)]
@@ -85,7 +84,8 @@ def main():
     p.add_argument("--logs_dir",  default="data/logs/raw")
     p.add_argument("--episodes",  default="data/alfred_episodes/candidate_episodes.json")
     p.add_argument("--output",    default="data/alfred_episodes/selected_episodes.json")
-    p.add_argument("--threshold", type=float, default=0.30)
+    p.add_argument("--threshold", type=float, default=0.50,
+                   help="Min fraction of models that must produce a valid action")
     args = p.parse_args()
     filter_episodes(args.logs_dir, args.episodes, args.output, args.threshold)
 
