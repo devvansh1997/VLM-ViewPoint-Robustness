@@ -71,6 +71,9 @@ def parse_args():
     p.add_argument("--headless", action="store_true",
                    help="Run AI2-THOR headlessly (required on Linux HPC)")
 
+    p.add_argument("--skip_action_check", action="store_true",
+                   help="Skip AI2-THOR action validation (use when simulator is unavailable)")
+
     p.add_argument("--overwrite", action="store_true",
                    help="Re-run episodes that already have log entries")
 
@@ -172,11 +175,14 @@ def main():
                     vlm_response = model.predict(image, prompt)
                     mapped_action, letter = map_response(vlm_response)
 
-                    # Check action success in simulator
-                    action_success = False
-                    error_msg = "no_action_mapped"
+                    # Check action success in simulator (skip if unavailable)
+                    action_success = None
+                    error_msg = ""
 
-                    if mapped_action is not None:
+                    if mapped_action is None:
+                        action_success = False
+                        error_msg = "no_action_mapped"
+                    elif not args.skip_action_check:
                         action_success, error_msg = check_action_success(
                             episode=episode,
                             action=mapped_action,

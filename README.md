@@ -35,12 +35,13 @@ This project evaluates four open-source VLMs under systematic camera rotation pe
 
 | Platform | Role | What Runs Here |
 |----------|------|----------------|
-| **Mac (M1 Air)** | Frame rendering | AI2-THOR simulator, frame capture |
+| **Mac (M1 Air)** | Frame rendering + action validation | AI2-THOR simulator, frame capture, action success checks |
 | **HPC (A100 Linux)** | VLM inference + analysis | All 4 models, stats, figures |
 | Windows (NVIDIA GPU) | Local model testing | VLM sanity checks only |
 
-> AI2-THOR has no Windows build and HPC lacks Xvfb/Vulkan for headless rendering.
-> Frames are rendered on Mac, zipped, transferred to HPC for inference.
+> **Two-pass pipeline:** AI2-THOR has no Windows build and HPC lacks Vulkan for headless rendering.
+> Pass 1 (HPC): VLM inference on pre-rendered frames — produces JSONL logs with predictions.
+> Pass 2 (Mac): Replay predicted actions in AI2-THOR — fills in action_success.
 
 ---
 
@@ -60,9 +61,10 @@ VLM-ViewPoint-Robustness/
 │   │   ├── download_alfred.py          # Download ALFRED JSON metadata
 │   │   ├── build_candidate_list.py     # Build 240-episode candidate list
 │   │   └── test_render_one.py          # Smoke test AI2-THOR rendering
-│   ├── mac/                            # Frame rendering (Mac only)
+│   ├── mac/                            # AI2-THOR tasks (Mac only)
 │   │   ├── render_all_frames.sh        # Render all 8,400 frames
 │   │   ├── package_frames.sh           # Zip for transfer to HPC
+│   │   ├── run_action_validation.sh    # Pass 2: validate actions in AI2-THOR
 │   │   └── test_render_one.sh
 │   └── hpc/                            # Inference + analysis (HPC only)
 │       ├── 01_run_baseline.sh          # Phase 1: original pose
@@ -85,7 +87,8 @@ VLM-ViewPoint-Robustness/
 │   ├── inference/
 │   │   ├── prompt_builder.py           # Multiple-choice template, ablation-ready
 │   │   ├── action_mapper.py            # VLM text -> AI2-THOR action
-│   │   └── run_inference.py            # Main CLI inference loop
+│   │   ├── run_inference.py            # Pass 1: VLM inference (HPC)
+│   │   └── action_validator.py         # Pass 2: action validation (Mac)
 │   └── analysis/
 │       ├── aggregate_logs.py           # Merge JSONL -> all_results.csv
 │       ├── filter_episodes.py          # Phase 1 episode selection
@@ -97,7 +100,8 @@ VLM-ViewPoint-Robustness/
 │   ├── alfred_episodes/                # candidate_episodes.json, selected_episodes.json
 │   ├── rendered_frames/                # 8,400 PNGs (rendered on Mac)
 │   └── logs/
-│       ├── raw/                        # Per-model JSONL logs
+│       ├── raw/                        # Per-model JSONL logs (Pass 1: HPC)
+│       ├── validated/                  # Action-validated logs (Pass 2: Mac)
 │       └── aggregated/                 # all_results.csv
 │
 └── results/                            # Final figures + analysis CSVs
@@ -135,7 +139,7 @@ bash scripts/mac/package_frames.sh          # creates data/rendered_frames.zip
 scp data/rendered_frames.zip user@hpc:~/Independent-Study/VLM-ViewPoint-Robustness/data/
 ```
 
-### Phase 1B: Baseline Inference (HPC)
+### Phase 1B: Baseline Inference (HPC — Pass 1)
 
 ```bash
 # On HPC: unzip frames first
@@ -148,21 +152,35 @@ python src/analysis/filter_episodes.py \
     --output   data/alfred_episodes/selected_episodes.json
 ```
 
-### Phase 2: Core Perturbation (HPC)
+### Phase 2: Core Perturbation (HPC — Pass 1)
 
 ```bash
 bash scripts/hpc/02_run_perturbation.sh
-python src/analysis/aggregate_logs.py
 ```
 
-### Phase 3 + 4: Ablation (HPC)
+### Phase 3 + 4: Ablation (HPC — Pass 1)
 
 ```bash
 bash scripts/hpc/03_run_ablation.sh <best_model> <worst_model>
-python src/analysis/aggregate_logs.py
 ```
 
-### Phase 5: Analysis + Figures (HPC)
+### Action Validation (Mac — Pass 2)
+
+After all HPC inference is done, transfer logs to Mac and validate actions:
+
+```bash
+# On Mac: pull inference logs from HPC
+scp user@hpc:~/Independent-Study/VLM-ViewPoint-Robustness/data/logs/raw/*.jsonl \
+    data/logs/raw/
+
+# Run action validation in AI2-THOR
+bash scripts/mac/run_action_validation.sh
+
+# Aggregate validated logs
+python src/analysis/aggregate_logs.py --logs_dir data/logs/validated
+```
+
+### Phase 5: Analysis + Figures
 
 ```bash
 bash scripts/hpc/04_generate_plots.sh

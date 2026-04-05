@@ -37,7 +37,8 @@ for MODEL in "$BEST_MODEL" "$WORST_MODEL"; do
             --frames_dir        "$FRAMES_DIR" \
             --output_dir        "$OUTPUT_DIR" \
             --ablation_variant  "$VARIANT" \
-            --use_full_model
+            --use_full_model \
+            --skip_action_check  # action validation runs on Mac (Pass 2)
 
         echo "[ablation] $MODEL ($VARIANT) done."
     done

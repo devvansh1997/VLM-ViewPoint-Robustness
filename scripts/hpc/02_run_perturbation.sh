@@ -39,7 +39,8 @@ for MODEL in "${MODELS[@]}"; do
         --episodes     "$EPISODES" \
         --frames_dir   "$FRAMES_DIR" \
         --output_dir   "$OUTPUT_DIR" \
-        --use_full_model
+        --use_full_model \
+        --skip_action_check  # action validation runs on Mac (Pass 2)
 
     echo "[perturbation] $MODEL done."
 done

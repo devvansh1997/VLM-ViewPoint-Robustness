@@ -14,11 +14,17 @@ the VLM input (pre-rendered frame) matches the simulator state.
 """
 
 import platform
-import os
 
 
 def _build_controller(headless: bool = True):
+    """
+    Initialize an AI2-THOR controller.
+
+    On Linux: uses CloudRendering (Vulkan, no X11 needed).
+    On macOS: uses default platform (windowed).
+    """
     from ai2thor.controller import Controller
+    from ai2thor.platform import CloudRendering
 
     kwargs = dict(
         width=300,
@@ -28,8 +34,7 @@ def _build_controller(headless: bool = True):
     )
 
     if headless and platform.system() == "Linux":
-        display = os.environ.get("DISPLAY", ":0")
-        kwargs["x_display"] = display
+        kwargs["platform"] = CloudRendering
 
     return Controller(**kwargs)
 
@@ -88,6 +93,7 @@ def check_action_success(
             rotation={"x": 0, "y": target_rotation, "z": 0},
             horizon=target_horizon,
             standing=True,
+            forceAction=True,
         )
 
         # Build action kwargs — object interaction actions need a target
