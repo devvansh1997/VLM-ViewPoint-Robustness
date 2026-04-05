@@ -28,11 +28,11 @@ def _build_controller(headless: bool = True):
     """
     Initialize an AI2-THOR controller.
 
-    On Linux (HPC), uses the DISPLAY env var set by the caller (via Xvfb).
-    On Windows, runs with the default display — headless flag is ignored
-    because Windows doesn't use Xvfb.
+    On Linux HPC: uses CloudRendering (Vulkan, no X11/Xvfb needed).
+    On macOS: uses default platform (windowed).
     """
     from ai2thor.controller import Controller
+    from ai2thor.platform import CloudRendering
 
     kwargs = dict(
         width=300,
@@ -42,8 +42,7 @@ def _build_controller(headless: bool = True):
     )
 
     if headless and platform.system() == "Linux":
-        display = os.environ.get("DISPLAY", ":0")
-        kwargs["x_display"] = display
+        kwargs["platform"] = CloudRendering
 
     return Controller(**kwargs)
 

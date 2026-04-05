@@ -134,15 +134,9 @@ mkdir -p data/logs/raw
 mkdir -p data/logs/aggregated
 mkdir -p results
 
-# Check for Xvfb (needed for AI2-THOR headless rendering)
-if command -v Xvfb &> /dev/null; then
-    echo "[setup] Xvfb found: $(which Xvfb)"
-else
-    echo "[setup] WARNING: Xvfb not found."
-    echo "  On Ubuntu:  sudo apt-get install xvfb"
-    echo "  On HPC:     module load xvfb  (or ask admin)"
-    echo "  To run headless: Xvfb :99 -screen 0 1024x768x24 & export DISPLAY=:99"
-fi
+# AI2-THOR uses CloudRendering (Vulkan) on Linux — no Xvfb needed.
+echo "[setup] AI2-THOR will use CloudRendering (Vulkan) for headless rendering."
+echo "[setup] No X11 or Xvfb required."
 
 # =============================================================================
 # Summary
@@ -180,9 +174,7 @@ echo ""
 echo "   4. HuggingFace login (for Gemma 3):"
 echo "      huggingface-cli login"
 echo ""
-echo "   5. Test AI2-THOR rendering:"
-echo "      Xvfb :99 -screen 0 1024x768x24 &"
-echo "      export DISPLAY=:99"
+echo "   5. Test AI2-THOR rendering (CloudRendering, no Xvfb needed):"
 echo "      python scripts/test_render_one.py"
 echo ""
 echo "   6. Test VLM loading:"
