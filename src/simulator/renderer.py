@@ -121,6 +121,7 @@ def render_frame(
         rotation={"x": 0, "y": target_rotation, "z": 0},
         horizon=target_horizon,
         standing=True,
+        forceAction=True,
     )
 
     if not event.metadata["lastActionSuccess"]:
