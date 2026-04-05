@@ -53,8 +53,10 @@ def main():
     # Render original pose (yaw=0, pitch=0)
     from src.simulator.renderer import render_original_pose, frame_path
 
-    print("\n[test] Initializing AI2-THOR and rendering frame...")
-    path = render_original_pose(ep, args.output_dir, headless=False)
+    import platform as plat
+    headless = plat.system() == "Linux"
+    print(f"\n[test] Initializing AI2-THOR and rendering frame (headless={headless})...")
+    path = render_original_pose(ep, args.output_dir, headless=headless)
     print(f"[test] Frame saved to: {path}")
 
     # Verify the file
@@ -66,7 +68,7 @@ def main():
     from src.simulator.renderer import render_frame, _build_controller
 
     print("\n[test] Rendering perturbed frame (yaw=+15, pitch=-10)...")
-    controller = _build_controller(headless=False)
+    controller = _build_controller(headless=headless)
     try:
         path2 = render_frame(controller, ep, yaw_offset=15, pitch_offset=-10,
                              output_dir=args.output_dir)
