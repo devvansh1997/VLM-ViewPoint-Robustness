@@ -80,19 +80,27 @@ def parse_args():
     return p.parse_args()
 
 
-def get_output_path(output_dir: str, model: str, phase: str) -> str:
+def get_output_path(output_dir: str, model: str, phase: str, ablation_variant: str = None) -> str:
     os.makedirs(output_dir, exist_ok=True)
     timestamp = time.strftime("%Y%m%d_%H%M%S")
+    if phase == "ablation" and ablation_variant:
+        return os.path.join(output_dir, f"{model}_{phase}_{ablation_variant}_{timestamp}.jsonl")
     return os.path.join(output_dir, f"{model}_{phase}_{timestamp}.jsonl")
 
 
-def load_completed_keys(output_dir: str, model: str, phase: str) -> set:
+def load_completed_keys(output_dir: str, model: str, phase: str, ablation_variant: str = None) -> set:
     """
-    Load (episode_id, yaw_offset, pitch_offset, phase) keys from existing log files
+    Load (episode_id, yaw_offset, pitch_offset) keys from existing log files
     so we can skip already-completed entries on resume.
+
+    For ablation phase, only matches files with the same variant (exact/qualitative)
+    to prevent cross-variant collisions.
     """
     completed = set()
-    pattern = f"{model}_{phase}_"
+    if phase == "ablation" and ablation_variant:
+        pattern = f"{model}_{phase}_{ablation_variant}_"
+    else:
+        pattern = f"{model}_{phase}_"
     for fname in os.listdir(output_dir):
         if fname.startswith(pattern) and fname.endswith(".jsonl"):
             with open(os.path.join(output_dir, fname)) as f:
@@ -132,9 +140,10 @@ def main():
     episodes = load_episode_list(args.episodes)
     model    = load_model(args.model, use_full=args.use_full_model)
 
-    output_path = get_output_path(args.output_dir, args.model, args.phase)
+    variant = args.ablation_variant if args.phase == "ablation" else None
+    output_path = get_output_path(args.output_dir, args.model, args.phase, variant)
     completed   = set() if args.overwrite else load_completed_keys(
-        args.output_dir, args.model, args.phase
+        args.output_dir, args.model, args.phase, variant
     )
 
     print(f"[run_inference] Model: {args.model} | Phase: {args.phase} | "
@@ -197,6 +206,7 @@ def main():
                         "task_type":           episode["task_type"],
                         "model":               args.model,
                         "phase":               args.phase,
+                        "ablation_variant":    variant,
                         "yaw_offset":          yaw,
                         "pitch_offset":        pitch,
                         "is_original_pose":    (yaw == 0 and pitch == 0),
