@@ -268,7 +268,9 @@ def plot_recovery_curves(df: pd.DataFrame, output_dir: str) -> None:
 # ---------------------------------------------------------------------------
 
 def generate_all_plots(csv_path: str, output_dir: str) -> None:
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, low_memory=False)
+    # Coerce action_success to numeric (handles mixed True/False/None/string)
+    df["action_success"] = pd.to_numeric(df["action_success"], errors="coerce")
     print(f"[plots] Loaded {len(df)} records from {csv_path}")
 
     plot_yaw_curves(df, output_dir)
