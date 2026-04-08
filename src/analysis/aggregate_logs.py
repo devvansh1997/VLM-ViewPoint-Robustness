@@ -12,7 +12,12 @@ Usage:
 import argparse
 import json
 import os
+import sys
+from pathlib import Path
+
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from pathlib import Path
 
 
@@ -20,6 +25,9 @@ def load_all_logs(logs_dir: str) -> pd.DataFrame:
     records = []
     for fname in sorted(os.listdir(logs_dir)):
         if not fname.endswith(".jsonl"):
+            continue
+        # Skip checkpoint files from action_validator (not full log entries)
+        if fname.startswith("check_results_"):
             continue
         fpath = os.path.join(logs_dir, fname)
         with open(fpath) as f:
