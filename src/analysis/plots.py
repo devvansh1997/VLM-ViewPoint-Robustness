@@ -130,7 +130,7 @@ def plot_robustness_heatmap(df: pd.DataFrame, output_dir: str) -> None:
     core = df[df["phase"] == "core"]
 
     baseline = (
-        core[core["is_original_pose"] == True]
+        core[(core["yaw_offset"] == 0) & (core["pitch_offset"] == 0)]
         .groupby("model")["action_success"]
         .mean()
         .rename("baseline")
@@ -241,7 +241,7 @@ def plot_recovery_curves(df: pd.DataFrame, output_dir: str) -> None:
             abl_v = ablation[
                 (ablation["model"] == model) &
                 (ablation["viewpoint_context"].apply(
-                    lambda c: ("degree" in c.lower()) if variant == "exact" else ("degree" not in c.lower() and c != "")
+                    lambda c: ("degree" in str(c).lower()) if variant == "exact" else ("degree" not in str(c).lower() and str(c) != "" and str(c) != "nan")
                 ))
             ]
             if abl_v.empty:

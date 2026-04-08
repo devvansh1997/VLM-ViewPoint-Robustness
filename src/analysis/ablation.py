@@ -66,9 +66,12 @@ def compute_recovery_delta(core_df: pd.DataFrame, ablation_df: pd.DataFrame) -> 
                 core_rate = core_slice["action_success"].mean()
                 abl_rate  = abl_slice["action_success"].mean()
 
-                # Detect variant from viewpoint_context content
-                sample_context = abl_slice["viewpoint_context"].iloc[0] if len(abl_slice) > 0 else ""
-                variant = _detect_variant(sample_context)
+                # Detect variant — use column if available, else infer from context
+                if "ablation_variant" in abl_slice.columns and pd.notna(abl_slice["ablation_variant"].iloc[0]):
+                    variant = abl_slice["ablation_variant"].iloc[0]
+                else:
+                    sample_context = abl_slice["viewpoint_context"].iloc[0] if len(abl_slice) > 0 else ""
+                    variant = _detect_variant(str(sample_context))
 
                 rows.append({
                     "model":            model,
