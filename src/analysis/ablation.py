@@ -39,50 +39,51 @@ def compute_recovery_delta(core_df: pd.DataFrame, ablation_df: pd.DataFrame) -> 
       core_success:      mean action_success in core phase
       ablation_success:  mean action_success in ablation phase
       recovery_delta:    ablation_success - core_success
-
-    The ablation_variant is inferred from whether viewpoint_context is
-    exact-numeric or qualitative.
     """
+    # Assign variant label to every ablation row
+    # Exact entries (written before the fix) have ablation_variant=NaN — detect from viewpoint_context
+    ablation_df = ablation_df.copy()
+    ablation_df["variant_label"] = ablation_df.apply(
+        lambda r: r["ablation_variant"] if pd.notna(r.get("ablation_variant")) else _detect_variant(str(r.get("viewpoint_context", ""))),
+        axis=1,
+    )
+
     rows = []
 
     for model in ablation_df["model"].unique():
         abl_model = ablation_df[ablation_df["model"] == model]
         core_model = core_df[core_df["model"] == model]
 
-        for yaw in YAW_OFFSETS:
-            for pitch in abl_model["pitch_offset"].unique():
-                core_slice = core_model[
-                    (core_model["yaw_offset"] == yaw) &
-                    (core_model["pitch_offset"] == pitch)
-                ]
-                abl_slice = abl_model[
-                    (abl_model["yaw_offset"] == yaw) &
-                    (abl_model["pitch_offset"] == pitch)
-                ]
+        for variant in abl_model["variant_label"].unique():
+            abl_variant = abl_model[abl_model["variant_label"] == variant]
 
-                if core_slice.empty or abl_slice.empty:
-                    continue
+            for yaw in YAW_OFFSETS:
+                for pitch in abl_variant["pitch_offset"].unique():
+                    core_slice = core_model[
+                        (core_model["yaw_offset"] == yaw) &
+                        (core_model["pitch_offset"] == pitch)
+                    ]
+                    abl_slice = abl_variant[
+                        (abl_variant["yaw_offset"] == yaw) &
+                        (abl_variant["pitch_offset"] == pitch)
+                    ]
 
-                core_rate = core_slice["action_success"].mean()
-                abl_rate  = abl_slice["action_success"].mean()
+                    if core_slice.empty or abl_slice.empty:
+                        continue
 
-                # Detect variant — use column if available, else infer from context
-                if "ablation_variant" in abl_slice.columns and pd.notna(abl_slice["ablation_variant"].iloc[0]):
-                    variant = abl_slice["ablation_variant"].iloc[0]
-                else:
-                    sample_context = abl_slice["viewpoint_context"].iloc[0] if len(abl_slice) > 0 else ""
-                    variant = _detect_variant(str(sample_context))
+                    core_rate = core_slice["action_success"].mean()
+                    abl_rate  = abl_slice["action_success"].mean()
 
-                rows.append({
-                    "model":            model,
-                    "yaw_offset":       yaw,
-                    "pitch_offset":     pitch,
-                    "ablation_variant": variant,
-                    "core_success":     round(core_rate, 4),
-                    "ablation_success": round(abl_rate, 4),
-                    "recovery_delta":   round(abl_rate - core_rate, 4),
-                    "n_episodes":       len(core_slice),
-                })
+                    rows.append({
+                        "model":            model,
+                        "yaw_offset":       yaw,
+                        "pitch_offset":     pitch,
+                        "ablation_variant": variant,
+                        "core_success":     round(core_rate, 4),
+                        "ablation_success": round(abl_rate, 4),
+                        "recovery_delta":   round(abl_rate - core_rate, 4),
+                        "n_episodes":       len(core_slice),
+                    })
 
     return pd.DataFrame(rows)
 
