@@ -147,7 +147,7 @@ def plot_robustness_heatmap(df: pd.DataFrame, output_dir: str) -> None:
     pivot = yaw_acc.pivot(index="model", columns="yaw_offset", values="delta")
     pivot.index = [MODEL_LABELS.get(m, m) for m in pivot.index]
 
-    fig, ax = plt.subplots(figsize=(8, 3))
+    fig, ax = plt.subplots(figsize=(10, 5))
     sns.heatmap(
         pivot,
         annot=True, fmt=".2f", cmap="Reds",
@@ -227,11 +227,11 @@ def plot_recovery_curves(df: pd.DataFrame, output_dir: str) -> None:
         print("[plots] No ablation data found — skipping Fig 5.")
         return
 
-    ablation_models = ablation["model"].unique()
+    ablation_models = sorted(ablation["model"].unique())
 
-    fig, axes = plt.subplots(1, len(ablation_models), figsize=(6 * len(ablation_models), 4), squeeze=False)
+    for model in ablation_models:
+        fig, ax = plt.subplots(figsize=(5, 3.5))
 
-    for ax, model in zip(axes[0], ablation_models):
         core_m = core[core["model"] == model].groupby("yaw_offset")["action_success"].mean()
         color  = MODEL_COLORS.get(model, "steelblue")
 
@@ -251,16 +251,18 @@ def plot_recovery_curves(df: pd.DataFrame, output_dir: str) -> None:
             ax.plot(abl_acc.index, abl_acc.values, style, color=color, alpha=0.6, label=label)
 
         ax.axvline(0, color="black", linewidth=0.8, linestyle="--", alpha=0.5)
-        ax.set_title(MODEL_LABELS.get(model, model))
+        ax.set_title(MODEL_LABELS.get(model, model), fontsize=12)
         ax.set_xlabel("Yaw Offset (degrees)")
         ax.set_ylabel("Action Success Rate")
         ax.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=1.0))
-        ax.legend(fontsize=8)
+        ax.legend(fontsize=8, loc="best")
         ax.grid(True, alpha=0.3)
+        fig.tight_layout()
 
-    fig.suptitle("Fig 5: Recovery from Prompt Augmentation", fontsize=11)
-    fig.tight_layout()
-    _save(fig, output_dir, "fig5_recovery_curves")
+        safe_name = model.replace(".", "").replace(" ", "_")
+        _save(fig, output_dir, f"fig5_recovery_{safe_name}")
+
+    print(f"[plots] Saved {len(ablation_models)} individual recovery figures")
 
 
 # ---------------------------------------------------------------------------

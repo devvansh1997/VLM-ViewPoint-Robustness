@@ -161,30 +161,43 @@ bash scripts/hpc/02_run_perturbation.sh
 ### Phase 3 + 4: Ablation (HPC — Pass 1)
 
 ```bash
-bash scripts/hpc/03_run_ablation.sh <best_model> <worst_model>
+bash scripts/hpc/03_run_ablation.sh qwen25vl internvl3 gemma3 llava_onevision
 ```
+
+Runs both ablation variants (exact numeric + qualitative descriptions) for each model.
+Each variant produces 8,400 entries per model (240 episodes x 35 viewpoints).
 
 ### Action Validation (Mac — Pass 2)
 
-After all HPC inference is done, transfer logs to Mac and validate actions:
+After all HPC inference is done, transfer logs and episode metadata to Mac:
 
 ```bash
-# On Mac: pull inference logs from HPC
+# On Mac: pull inference logs + episode list from HPC
 scp user@hpc:~/Independent-Study/VLM-ViewPoint-Robustness/data/logs/raw/*.jsonl \
     data/logs/raw/
+scp user@hpc:~/Independent-Study/VLM-ViewPoint-Robustness/data/alfred_episodes/selected_episodes.json \
+    data/alfred_episodes/
 
-# Run action validation in AI2-THOR
-bash scripts/mac/run_action_validation.sh
+# Run action validation in AI2-THOR (uses caffeinate to prevent sleep)
+caffeinate -dims bash scripts/mac/run_action_validation.sh
 
 # Aggregate validated logs
 python src/analysis/aggregate_logs.py --logs_dir data/logs/validated
 ```
 
+The validator deduplicates checks on `(episode_id, yaw, pitch, action)` — identical
+simulator checks across models/phases run only once. Batches by scene and reuses the
+AI2-THOR controller for speed. Checkpoints every 500 checks for resume support.
+
 ### Phase 5: Analysis + Figures
 
 ```bash
-bash scripts/hpc/04_generate_plots.sh
+python src/analysis/symmetry.py --csv data/logs/aggregated/all_results.csv --output_dir results
+python src/analysis/ablation.py --csv data/logs/aggregated/all_results.csv --output_dir results
+python src/analysis/plots.py    --csv data/logs/aggregated/all_results.csv --output_dir results
 ```
+
+Generates 5 figures (PNG + PDF) and analysis CSVs in `results/`.
 
 ---
 
@@ -212,6 +225,7 @@ Every inference call writes one JSON line:
   "task_type":             "pick_and_place",
   "model":                 "qwen25vl",
   "phase":                 "core",
+  "ablation_variant":      null,
   "yaw_offset":            30,
   "pitch_offset":          0,
   "is_original_pose":      false,
@@ -221,9 +235,42 @@ Every inference call writes one JSON line:
   "mapped_action":         "RotateRight",
   "action_success":        true,
   "original_pose_success": true,
-  "image_path":            "data/rendered_frames/ep_00001_yaw_30_pitch_0.png"
+  "image_path":            "data/rendered_frames/ep_00001_yaw_30_pitch_0.png",
+  "error_message":         ""
 }
 ```
+
+- `ablation_variant`: null for baseline/core, "exact" or "qualitative" for ablation phase
+- `action_success`: null during Pass 1 (HPC), filled by Pass 2 (Mac validation)
+
+---
+
+## Results Summary
+
+**Dataset:** 240 episodes (60 per task type), 35 viewpoints each, 4 models = 101,760 total evaluations.
+
+**Key Findings:**
+
+| Model | Baseline Success | Yaw Robustness | Pitch Sensitivity |
+|-------|-----------------|----------------|-------------------|
+| InternVL3 8B | ~85% | Very robust (flat curve) | Moderate drop at extreme pitch |
+| LLaVA-OneVision 7B | ~70% | Robust | Stable |
+| Qwen2.5-VL 7B | ~46% | Mild degradation | Sharp cliff at +pitch (looking down) |
+| Gemma 3 12B | ~15% | Near-random (no signal) | Near-random |
+
+- **Pitch perturbations are more disruptive than yaw** across all models
+- **Left/right yaw symmetry confirmed** — no directional bias (Wilcoxon p > 0.05)
+- **Qualitative viewpoint hints help more than exact numeric ones** for 3/4 models
+- **Model size does not predict robustness** — Gemma 3 (12B) performs worst; InternVL3 (8B) performs best
+
+**Output files in `results/`:**
+- `fig1_yaw_curves` — Action success vs. yaw offset per model
+- `fig2_pitch_curves` — Action success vs. pitch offset per model
+- `fig3_robustness_heatmap` — Robustness drop (model x yaw offset)
+- `fig4_symmetry_bars` — Left/right symmetry visualization
+- `fig5_recovery_curves` — Ablation recovery (core vs. exact vs. qualitative)
+- `symmetry_ratios.csv`, `wilcoxon_results.csv` — Statistical tests
+- `ablation_recovery.csv`, `ablation_summary.csv` — Ablation deltas
 
 ---
 
@@ -233,6 +280,11 @@ Every inference call writes one JSON line:
 |-------|-----|
 | `conda activate` fails | `conda init bash` (Mac/Linux) or `conda init powershell` (Windows), restart terminal |
 | AI2-THOR `no build exists for arch=Windows` | Expected — render frames on Mac |
-| AI2-THOR `vulkaninfo failed` on HPC | Expected — render frames on Mac, transfer to HPC |
+| AI2-THOR `vulkaninfo failed` on HPC | Expected — HPC lacks Vulkan; use two-pass pipeline |
+| AI2-THOR `TeleportFull collision` on Mac | Already handled — `forceAction=True` in renderer + success_checker |
+| AI2-THOR hangs during rendering | Ctrl+C and restart — resume support skips completed frames |
 | Gemma 3 `401 Unauthorized` | `huggingface-cli login` + accept license at huggingface.co |
 | `No module named einops/timm` | `pip install einops timm` |
+| `unzip` not available on HPC | `python -c "import zipfile; zipfile.ZipFile('rendered_frames.zip').extractall('.')"` |
+| `Image data of dtype object` in plots | Fixed — `pd.to_numeric(df["action_success"], errors="coerce")` |
+| Ablation qualitative all zeros | Ensure `ablation_variant` field is in log entries (fixed in run_inference.py) |
